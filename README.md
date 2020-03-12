@@ -1,19 +1,19 @@
-# OSD Conky
+# OSD Developer Dashboard
 
-Conky Configuration for Osedea Developers
+This is a Conky dashboard for developers
 
 ## Installation
 
 ```
-git clone git@github.com:Osedea/osd-conky.git osd-conky
-cd osd-conky/
+git clone git@github.com:Osedea/osd-dev-dashboard.git osd-dev-dashboard
+cd osd-dev-dashboard/
 sudo ./install.sh
 ```
 
 (Optional) delete the folder after installation
 ```
 cd ../
-rm -rf osd-conky/
+rm -rf osd-dev-dashboard/
 ```
 
 ### Google Calendar integration
@@ -64,7 +64,7 @@ Find the ID of your city and place it inside the template7 variable inside the c
 ### Github integration
 
 - Go to your github tokens : https://github.com/settings/tokens
-- Create a new token for osd_conky
+- Create a new token for osd-dev-dashboard
 - Give it access to :
     - repo 
         - repo:status
@@ -107,10 +107,10 @@ Keep your installation folder, run the following to reload the configuration and
 
 ## License
 
-OSD Conky is licensed under the terms of the GPLv3 license.
+The OSD Dev Dashboard is licensed under the terms of the GPLv3 license.
 
 ## Contributing
 
 Contributions are welcome from anyone.
 
-Please read CONTRIBUTING.md for guidelines on contributing to OSD Conky.
+Please read CONTRIBUTING.md for guidelines on contributing to the OSD Dev Dashboard.
