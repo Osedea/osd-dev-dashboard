@@ -91,7 +91,9 @@ install_conky() {
 
 generate_configuration() {
     printf "${YELLOW}Generated configuration${ENDN}"
+    cd "$DIR"
     python3 ./src/generator.py
+    cd -
 }
 install() {
     install_conky
