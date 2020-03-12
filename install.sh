@@ -22,7 +22,7 @@ run_as_user() {
     if [[ "$USER" == "$ME" ]]; then
         bash -c "$1"
     else
-        su - "$USER" -c "$1"
+        su "$USER" -c "$1"
     fi;
 }
 
