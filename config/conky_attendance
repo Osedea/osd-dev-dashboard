@@ -1,0 +1,55 @@
+conky.config = {
+  xinerama_head = 0,
+  background = false,
+  border_width = 0,
+  
+  background = false,
+  update_interval = 1,
+  double_buffer = true,
+  no_buffers = true,
+
+  gap_x = 25,
+  gap_y = 0,
+  maximum_width = 796,
+  minimum_width = 796,
+  minimum_height = 312,
+  alignment = 'bottom_right',
+  own_window = true,
+  own_window_type = 'desktop',
+  own_window_transparent = true,
+  own_window_argb_visual = true,
+  own_window_argb_value = 255,
+  own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
+  border_inner_margin = 0,
+  border_outer_margin = 0,
+
+  draw_shades = false,
+  default_shade_color = 'AAAAAA',
+  draw_outline = false,
+  default_outline_color = 'AAAAAA',
+  draw_borders = false,
+  draw_graph_borders = false,
+  default_graph_width = 20,
+  default_graph_height = 80,
+  show_graph_scale = false,
+  show_graph_range = false,
+
+  use_xft = true,
+  xftalpha = 0,
+  xftfont = 'Droid Sans:size=8',
+  text_buffer_size = 256,
+  override_utf8_locale = true,
+
+  short_units = true,
+  pad_percents = 2,
+  top_name_width = 30,
+
+  default_color = 'white'
+}
+
+conky.text = [[
+${alignr}${voffset 50}${color white}${font FreeMono:size=16}In office
+${hr 1}
+\
+${color white}${font FreeMono:size=10}${execp src/modules/attendance/run-attendance.sh}
+]]

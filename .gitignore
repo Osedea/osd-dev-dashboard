@@ -1,0 +1,7 @@
+.venv
+.vscode
+src/modules/*/security/*
+src/modules/github/.git_indexes/*
+src/modules/github/.octo_arm
+**/__pycache__
+**/*.pyc

@@ -1,0 +1,57 @@
+
+conky.config = {
+  	-- 1 or 2 to display it on a different screen
+	xinerama_head = {{ config['LAYOUT']['xinerama_head'] if config['LAYOUT']['xinerama_head'] else '0' }},
+  background = {{ config['LAYOUT']['background'] if config['LAYOUT']['background'] else 'false' }},
+
+  border_width = 1,
+  
+	update_interval = 10,
+	double_buffer = {{ config['PERFORMANCE']['double_buffer'] if config['PERFORMANCE']['double_buffer'] else 'true' }},
+	no_buffers = {{ config['PERFORMANCE']['no_buffers'] if config['PERFORMANCE']['no_buffers'] else 'true' }},
+
+  alignment = 'bottom_left',
+  gap_x = 0,
+  gap_y = 0,
+
+  minimum_width = 400,
+  minimum_height = 200,
+  
+  own_window = true,
+	own_window_type = 'normal',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_title = '',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	own_window_transparent = true,
+
+  draw_shades = false,
+  default_shade_color = 'AAAAAA',
+  draw_outline = false,
+  default_outline_color = 'AAAAAA',
+  draw_borders = false,
+  draw_graph_borders = false,
+  default_graph_width = 20,
+  default_graph_height = 80,
+  show_graph_scale = false,
+  show_graph_range = false,
+
+  use_xft = true,
+  xftalpha = 0,
+  xftfont = 'Droid Sans:size=8',
+  text_buffer_size = 256,
+  override_utf8_locale = true,
+
+  short_units = true,
+  top_name_width = 30,
+
+  default_color = {{ config['STYLE']['default_color'] if config['STYLE']['default_color'] else 'white' }}
+}
+
+conky.text = [[
+${image src/icons/toggl.png -p 2,2 -s 100x25 -f 86400}
+\
+${color white}${font FreeMono:size=10}${execi 30 python3 src/modules/toggl/toggl.py}
+\
+]]
+    

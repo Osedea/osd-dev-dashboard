@@ -1,0 +1,45 @@
+conky.config = {
+	-- 1 or 2 to display it on a different screen
+	xinerama_head = {{ config['LAYOUT']['xinerama_head'] if config['LAYOUT']['xinerama_head'] else '0' }},
+	background = {{ config['LAYOUT']['background'] if config['LAYOUT']['background'] else 'false' }},
+
+	update_interval = {{ config['PERFORMANCE']['update_interval'] if config['PERFORMANCE']['update_interval'] else '600' }},
+	double_buffer = {{ config['PERFORMANCE']['double_buffer'] if config['PERFORMANCE']['double_buffer'] else 'true' }},
+	no_buffers = {{ config['PERFORMANCE']['no_buffers'] if config['PERFORMANCE']['no_buffers'] else 'true' }},
+
+	alignment = 'top_left',
+
+	maximum_width = 450,
+  maximum_height = 500,
+
+	own_window = true,
+	own_window_type = 'normal',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_title = '',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	own_window_transparent = true,
+
+	gap_x = 30,
+	gap_y = 435,
+
+	border_inner_margin = 15,
+	border_outer_margin = 0,
+
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+
+	use_xft = true,
+	xftalpha = 0,
+
+  override_utf8_locale = true,
+
+	font = 'FreeMono:size=10',
+	default_color = {{ config['STYLE']['default_color'] if config['STYLE']['default_color'] else 'white' }}
+};
+
+conky.text = [[
+${font FreeMono:size=10}${execpi 300 python3 src/modules/gmail/gmail.py }
+]];
