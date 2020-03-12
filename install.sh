@@ -67,6 +67,7 @@ install_conky() {
             cd conky-1.11.5
             printf "${YELLOW}Starting brew install${ENDN}"
             run_as_user "brew install jq parallel cmake freetype gettext lua imlib2 pkg-config librsvg docbook2x lcov"
+            run_as_user "brew cask install xquartz"
             run_as_user "brew link gettext --force"
             printf "${YELLOW}Starting build${ENDN}"
             mkdir build
