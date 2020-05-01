@@ -22,7 +22,7 @@ run_as_user() {
     if [[ "$USER" == "$ME" ]]; then
         bash -c "$1"
     else
-        su - "$USER" -c "$1"
+        su "$USER" -c "$1"
     fi;
 }
 
@@ -65,8 +65,11 @@ install_conky() {
             cd /tmp/conky_install
             unzip v1.11.5.zip
             cd conky-1.11.5
+            printf "${YELLOW}Starting brew install${ENDN}"
             run_as_user "brew install jq parallel cmake freetype gettext lua imlib2 pkg-config librsvg docbook2x lcov"
+            run_as_user "brew cask install xquartz"
             run_as_user "brew link gettext --force"
+            printf "${YELLOW}Starting build${ENDN}"
             mkdir build
             cd build
             cmake\
@@ -87,7 +90,10 @@ install_conky() {
 }
 
 generate_configuration() {
+    printf "${YELLOW}Generated configuration${ENDN}"
+    cd "$DIR"
     python3 ./src/generator.py
+    cd -
 }
 install() {
     install_conky

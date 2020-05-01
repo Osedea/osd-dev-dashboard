@@ -16,6 +16,8 @@ cd ../
 rm -rf osd-dev-dashboard/
 ```
 
+If you get the: `conky: can't open display:` you must restart your computer.
+
 ### Google Calendar integration
 
 You will need to parameter your google account to allow access to gcalcli (https://github.com/insanum/gcalcli)
